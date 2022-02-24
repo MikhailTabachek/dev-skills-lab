@@ -1,7 +1,12 @@
 const skills = [
-  {text: 'Create online game', done: true, _id: 0001},
-  {text: 'Make a money transfer app', done: false, _id: 0002},
-  {text: 'Build supermarket in VR', done: false, _id: 0003},
+  {text: 'Git', done: true, _id: 1001},
+  {text: 'GitHub', done: true, _id: 1002},
+  {text: 'HTML', done: true, _id: 1003},
+  {text: 'CSS', done: true, _id: 1004},
+  {text: 'Java Script', done: "in progress", _id: 1005},
+  {text: 'Create online game for project', done: true, _id: 1006},
+  {text: 'React', done: false, _id: 1007},
+  {text: 'Python', done: "in progress", _id: 1008}
 ]
 
 const find = (conditions, callback) => {
@@ -12,7 +17,7 @@ const find = (conditions, callback) => {
       throw new TypeError('Please pass in an object')
     }
     // If the object is empty, return all the todos
-    if (Object.keys(conditions).length === 0) return callback(null, todos)
+    if (Object.keys(conditions).length === 0) return callback(null, skills)
 	// deal with errors
   } catch (error) {
     console.log(error)
