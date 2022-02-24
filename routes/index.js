@@ -5,7 +5,7 @@ const router = Router()
 router.get('/', function(req, res) {
   res.render('index', {
     title: 'Skills',
-    h1: "Mike's skills"
+    h1: "Mike's skills!"
     
   })
 })
