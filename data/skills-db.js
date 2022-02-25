@@ -3,10 +3,10 @@ const skills = [
   {text: 'GitHub', done: true, _id: 1002},
   {text: 'HTML', done: true, _id: 1003},
   {text: 'CSS', done: true, _id: 1004},
-  {text: 'Java Script', done: "in progress", _id: 1005},
+  {text: 'Java Script', done: false, _id: 1005},
   {text: 'Create online game for project', done: true, _id: 1006},
   {text: 'React', done: false, _id: 1007},
-  {text: 'Python', done: "in progress", _id: 1008}
+  {text: 'Python', done: false, _id: 1008}
 ]
 
 const find = (conditions, callback) => {
@@ -25,6 +25,18 @@ const find = (conditions, callback) => {
   }
 }
 
+const findById = (id, callback) => {
+  try {
+    const skill = skills.find(skill => skill._id === parseInt(id))
+    if (!skill) throw new Error ("No todo was found")
+    return callback(null, skill)
+  } catch (error) {
+    console.log(error)
+    return callback(error, null)
+  }
+}
+
 export { 
-	find
+	find,
+  findById
 }

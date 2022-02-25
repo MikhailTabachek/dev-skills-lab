@@ -4,6 +4,7 @@ const router = Router()
 
 /* GET skills listing. */
 router.get('/', skillsCtrl.index)
+router.get("/:id", skillsCtrl.show)
 
 export {
   router
