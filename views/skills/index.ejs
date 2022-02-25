@@ -13,8 +13,13 @@
     <h2><%= error %></h2>
     <% } %> 
   <ul> 
-    <% skills.forEach(function(skill){ %>
+    <% skills.forEach(skill => { %>
       <li>
+        <form 
+          action="/skills/<%=skill._id %> ?_method=DELETE" class="delete-form" 
+          method="post">
+          <button type="submit">X</button>
+        </form>
         <a href="/skills/<%=skill._id %>"><%= skill.text %></a>
         -
         <%= skill.done ? "achieved" : "in progress" %> 
